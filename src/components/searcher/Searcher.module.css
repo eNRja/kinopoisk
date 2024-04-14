@@ -1,0 +1,20 @@
+.Searcher {
+  margin: 100px 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.Searcher input {
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .Searcher {
+    margin-top: 130px;
+  }
+
+  .Searcher input {
+    margin: 0 2px;
+    width: 80px;
+  }
+}

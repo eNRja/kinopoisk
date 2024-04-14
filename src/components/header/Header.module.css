@@ -1,0 +1,85 @@
+.Header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ebebeb;
+}
+
+.HeaderMobile {
+  display: none;
+}
+
+.HeaderLogo {
+  height: 80px;
+  margin-right: 100px;
+}
+
+.HeaderHelper {
+  display: flex;
+  justify-content: center;
+}
+
+.HeaderBars {
+  height: 30px;
+  margin: auto 40px auto 0;
+  cursor: pointer;
+}
+
+.LinkLoginLogout {
+  align-self: center;
+}
+
+.LoginLogout {
+  height: 24px;
+  margin: auto 40px auto 0;
+  cursor: pointer;
+}
+
+.PopupContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.Popup {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.Popup button {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .Header {
+    padding-top: 10px;
+  }
+
+  .HeaderHelper {
+    flex-direction: column;
+  }
+
+  .HeaderHelper img {
+    margin-bottom: 10px;
+  }
+
+  .HeaderLogo {
+    margin-right: 0;
+  }
+
+  .HeaderDesktop {
+    display: none;
+  }
+
+  .HeaderMobile {
+    display: block;
+  }
+}

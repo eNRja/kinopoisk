@@ -1,0 +1,31 @@
+.Posters {
+  z-index: 10;
+  display: flex;
+  width: 800px;
+  margin: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Для поддержки плавного скролла на мобильных устройствах */
+  scrollbar-width: none; /* Скрыть стандартный скроллбар */
+  -ms-overflow-style: none; /* Скрыть стандартный скроллбар в IE/Edge */
+  height: 240px;
+  margin-bottom: 20px;
+}
+
+.Posters::-webkit-scrollbar {
+  display: none; /* Скрыть стандартный скроллбар в WebKit (Chrome, Safari) */
+}
+
+.Poster {
+  margin-right: 10px;
+  height: 100%;
+}
+
+.PosterImg {
+  height: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .Posters {
+    max-width: 320px;
+  }
+}

@@ -1,0 +1,28 @@
+.Loader {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  align-content: center;
+}
+
+.MovieDetails {
+  border: 1px solid #ccc;
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.MovieDetailsImg {
+  width: 300px;
+  height: 400px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 500px) {
+  .MovieDetails {
+    max-width: 320px;
+    flex-direction: column;
+  }
+}

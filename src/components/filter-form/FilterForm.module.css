@@ -1,0 +1,38 @@
+.FilterForm {
+  margin: 10px;
+}
+
+.FilterInput {
+  text-align: right;
+}
+
+.FilterFormCounter {
+  text-align: center;
+  margin: 20px;
+}
+
+.FilterFormCounter p {
+  margin: 0;
+}
+
+.FilterSubmitButton {
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+  border: none;
+  background: #d3dedc;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.FilterSubmitButton:hover {
+  opacity: 0.6;
+}
+
+.FilterInputSmall {
+  width: 20px;
+}
+
+.FilterInputLabel {
+  margin: 0 6px;
+}

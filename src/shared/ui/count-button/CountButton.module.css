@@ -1,0 +1,10 @@
+.CountButton {
+  cursor: pointer;
+  border: none;
+  background: #d3dedc;
+  margin: 0 6px;
+}
+
+.CountButtonActive {
+  background: blue;
+}

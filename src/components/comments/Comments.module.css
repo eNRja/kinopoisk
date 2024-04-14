@@ -1,0 +1,32 @@
+.CommentsContainer {
+  display: flex;
+  justify-content: center;
+  max-width: 750px;
+  margin: auto;
+}
+
+.Comments {
+  border: 1px solid red;
+}
+
+.CommentsButton img {
+  width: 30px;
+  height: 30px;
+}
+
+.Author {
+  text-align: center;
+}
+
+.CommentsButton {
+  height: 40px;
+  width: 140px;
+  border: none;
+  background: #d3dedc;
+  margin: 0 0 20px;
+  cursor: pointer;
+}
+
+.CommentsHeader {
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+.Seasons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.SeasonInfo {
+  margin: 0 5px;
+  border: 1px solid #ccc;
+}

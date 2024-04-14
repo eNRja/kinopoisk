@@ -1,0 +1,39 @@
+.ActorsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.Actors {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  grid-gap: 5px;
+}
+
+.Actor {
+  width: 150px;
+  background-color: #ccc;
+  text-align: center;
+}
+
+.ActorImg {
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
+}
+
+.ActorsButton {
+  max-width: 40px;
+}
+
+.ActorsButton img {
+  width: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .Actors {
+    grid-template-columns: repeat(2, 140px);
+  }
+  .ActorsButton {
+    border: none;
+  }
+}

@@ -1,0 +1,31 @@
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  width: 40%;
+}
+
+.Pagination span {
+  align-self: center;
+}
+
+.PaginationButton {
+  border: none;
+  background: #d3dedc;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+  height: 40px;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.PaginationButton:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 500px) {
+  .Pagination {
+    width: 90%;
+  }
+}

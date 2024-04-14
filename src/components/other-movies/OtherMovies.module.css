@@ -1,0 +1,38 @@
+.OtherMovies {
+  z-index: 10;
+  display: flex;
+  width: 800px;
+  margin: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Для поддержки плавного скролла на мобильных устройствах */
+  scrollbar-width: none; /* Скрыть стандартный скроллбар */
+  -ms-overflow-style: none; /* Скрыть стандартный скроллбар в IE/Edge */
+  height: 340px;
+  margin-bottom: 20px;
+}
+
+.OtherMoviesHead {
+  text-align: center;
+}
+
+.OtherMovies::-webkit-scrollbar {
+  display: none; /* Скрыть стандартный скроллбар в WebKit (Chrome, Safari) */
+}
+
+.OtherMovie {
+  margin-right: 10px;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #666;
+}
+
+.OtherMovieImg {
+  height: 80%;
+}
+
+@media screen and (max-width: 500px) {
+  .OtherMovies {
+    max-width: 320px;
+  }
+}
