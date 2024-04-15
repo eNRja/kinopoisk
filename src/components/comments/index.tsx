@@ -1,16 +1,15 @@
 import React from "react";
 import styles from "./Comments.module.css";
 import { fetchReview } from "../../services/api/movieAPI";
-import { useDispatch } from "../../services/store";
+import { RootState, useDispatch, useSelector } from "../../services/store";
 
 export const Comments = ({ comments }: any) => {
+  const { film, loaderReview } = useSelector((state: RootState) => state.movie);
   const dispatch = useDispatch();
   const loadMoreComments = () => {
-    dispatch(
-      fetchReview({ id: comments.docs[0].movieId, page: comments.page + 1 })
-    );
+    dispatch(fetchReview({ id: film.id, page: comments.page + 1 }));
   };
-console.log(comments)
+
   if (!comments) return null;
   return (
     <>
@@ -29,7 +28,7 @@ console.log(comments)
               className={styles.CommentsButton}
               onClick={loadMoreComments}
             >
-              ещё
+              {loaderReview ? "Загрузка..." : "ещё"}
             </button>
           )}
         </div>

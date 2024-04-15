@@ -8,6 +8,7 @@ import {
   fetchReviewSuccess,
   fetchPostersSuccess,
   fetchRandomMovieSuccess,
+  loadingReview,
 } from "../reducers/movieReducer";
 
 const API_TOKEN = process.env.API_TOKEN;
@@ -140,6 +141,9 @@ export const fetchReview = createAsyncThunk(
         throw new Error("API base URL is not defined");
       }
 
+      // Начало загрузки
+      thunkAPI.dispatch(loadingReview(true));
+
       const config: AxiosRequestConfig = {
         headers: {
           "X-API-KEY": API_TOKEN,
@@ -152,9 +156,11 @@ export const fetchReview = createAsyncThunk(
       );
       // Диспатчим экшен fetchReviewSuccess с данными в случае успеха
       thunkAPI.dispatch(fetchReviewSuccess(response.data));
+      thunkAPI.dispatch(loadingReview(false));
     } catch (error: any) {
       // Диспатчим экшен fetchMovieFailure в случае ошибки
       thunkAPI.dispatch(fetchMovieFailure(error.message));
+      thunkAPI.dispatch(loadingReview(false));
     }
   }
 );

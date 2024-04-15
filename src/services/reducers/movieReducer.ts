@@ -14,6 +14,7 @@ interface MovieState {
   posters: any;
   randomMovie: any;
   searchTerm: string | null;
+  loaderReview: boolean;
 }
 
 const initialState: MovieState = {
@@ -30,6 +31,7 @@ const initialState: MovieState = {
   posters: null,
   randomMovie: false,
   searchTerm: null,
+  loaderReview: false,
 };
 
 const movieSlice = createSlice({
@@ -66,10 +68,18 @@ const movieSlice = createSlice({
       state.error = null;
       state.film = action.payload;
     },
-    fetchReviewSuccess(state, action: PayloadAction<string>) {
+    fetchReviewSuccess(state, action: PayloadAction<any>) {
       state.loading = false;
       state.error = null;
-      state.filmReview = action.payload;
+      if (state.filmReview) {
+        state.filmReview = {
+          ...state.filmReview,
+          docs: [...state.filmReview.docs, ...action.payload.docs],
+          page: action.payload.page,
+        };
+      } else {
+        state.filmReview = action.payload;
+      }
     },
     fetchPostersSuccess(state, action: PayloadAction<string>) {
       state.loading = false;
@@ -88,6 +98,9 @@ const movieSlice = createSlice({
     updateSearchTerm(state, action: PayloadAction<string>) {
       state.searchTerm = action.payload;
     },
+    loadingReview(state, action: PayloadAction<boolean>) {
+      state.loaderReview = action.payload;
+    },
   },
 });
 
@@ -103,6 +116,7 @@ export const {
   fetchRandomMovieSuccess,
   falseRandomMovie,
   updateSearchTerm,
+  loadingReview,
 } = movieSlice.actions;
 
 export default movieSlice.reducer;
